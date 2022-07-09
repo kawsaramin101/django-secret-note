@@ -36,9 +36,15 @@
         </div>
         <div id="failed-to-copy"></div>
         <br/><br/>
-        <p class="custom-card">
-        {{note.body}}
-        </p>
+        <div class="custom-card">
+            <p>{{note.body}}</p><br/>
+            <p class="has-text-grey has-text-right is-size-7">
+            Created : {{note.created}}<br/>
+            {% if note.created != note.edited %}
+            Edited : {{note.edited}}
+            {% endif %}
+            </p>
+        </div>
     </div>
     
     <script>document.addEventListener("DOMContentLoaded",()=>{(document.querySelectorAll(".notification .delete")||[]).forEach(a=>{let b=a.parentNode;a.addEventListener("click",()=>{b.parentNode.parentNode.removeChild(b.parentNode)})})})</script>
