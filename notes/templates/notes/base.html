@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Notes</title>
+    {% block head %}{% endblock head %}
+  
+
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="notification {{message.tags}} is-light">
+        <div class="is-flex is-align-items-center is-justify-content-space-between">
+            <span>{{message}}</span>
+            <button class="delete is-large"></button>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock %}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+                const $notification = $delete.parentNode;
+
+                $delete.addEventListener('click', () => {
+                    $notification.parentNode.parentNode.removeChild($notification.parentNode);
+                });
+            });
+        });
+    </script>
+    {% block script %}
+    {% endblock script %}
+</body>
+</html>
