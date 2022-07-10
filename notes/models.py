@@ -5,7 +5,7 @@ from django.contrib.auth.hashers import make_password
 
 class Note(models.Model):
     
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    secondary_id = models.UUIDField(default=uuid.uuid4, unique=True)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     edited = models.DateTimeField(auto_now=True)
@@ -13,10 +13,10 @@ class Note(models.Model):
     password_to_read = models.CharField(max_length=2000, null=True, blank=True)
     
     class Meta:
-        ordering = ["-id"]
+        ordering = ["-created"]
     
     def __str__(self):
-        return str(id)
+        return str(self.id)
         
     #def save(self, *args, **kwargs):
         #self.password_to_edit =  make_password(self.password_to_edit)

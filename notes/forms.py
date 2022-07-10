@@ -28,3 +28,9 @@ class NoteForm(forms.ModelForm):
         instance.save()
         return instance
           
+          
+class NoteEditForm(forms.ModelForm):
+     
+    class Meta:
+        model = Note 
+        fields = ['body']
