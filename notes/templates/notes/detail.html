@@ -38,10 +38,10 @@
         <div id="failed-to-copy"></div>
         <br/><br/>
         <div class="custom-card">
-            <p>{{note.body}}</p><br/>
+            <p>{{note.body|linebreaksbr}}</p><br/>
             <p class="has-text-grey has-text-right is-size-7">
             Created : {{note.created}}<br/>
-            {% if note.created != note.edited %}
+            {% if note.is_edited %}
             Edited : {{note.edited}}
             {% endif %}
             </p>

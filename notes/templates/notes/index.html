@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secret Notes</title>
-    <!-- Bulma css -->
+    <!--Bulma css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 </head>
 <body>
@@ -56,7 +56,7 @@
             <button type="submit" class="button">Add Note</button>
         </div>
     </form>
-    <script>function changePasswordVisibility(){let a=document.querySelector("#password_to_read"),b=document.querySelector("#password_to_edit");"password"===a.type?a.type="text":a.type="password","password"===b.type?b.type="text":b.type="password"}</script>
+    <script>function changePasswordVisibility(){let a=document.querySelector("#password_to_edit");"password"===a.type?a.type="text":a.type="password"}</script>
     <script>document.addEventListener("DOMContentLoaded",()=>{(document.querySelectorAll(".notification .delete")||[]).forEach(a=>{let b=a.parentNode;a.addEventListener("click",()=>{b.parentNode.parentNode.removeChild(b.parentNode)})})})</script>
 </body>
 </html>

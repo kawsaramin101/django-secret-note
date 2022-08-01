@@ -18,6 +18,11 @@ class Note(models.Model):
     def __str__(self):
         return str(self.id)
         
+    @property 
+    def is_edited(self):
+        print(self.created, self.edited)
+        return not self.created.strftime("%Y-%m-%d %H:%M:%S")  == self.edited.strftime("%Y-%m-%d %H:%M:%S") 
+        
     #def save(self, *args, **kwargs):
         #self.password_to_edit =  make_password(self.password_to_edit)
         #self.password_to_read =  make_password(self.password_to_read)

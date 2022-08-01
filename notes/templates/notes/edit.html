@@ -34,7 +34,7 @@
             <div class="field my-2">
                 <label for="{{note_form.body.name}}" class="{% if note_form.body.field.required %}label{% endif%}">{{ note_form.body.label_tag }}</label>
                 <div class="control">
-                    <textarea name="{{note_form.body.name}}" class="textarea {% if note_form.body.errors %}is-danger{% endif %}" placeholder="Write down your note here.." required="{{ note_form.body.field.required }}" cols="{{note_form.body.field.widget.attrs.cols}}" rows="{{note_form.body.field.widget.attrs.rows}}">{% if note_form.body.value %} {{ note_form.body.value }} {% endif %}</textarea>
+                    <textarea name="{{note_form.body.name}}" class="textarea {% if note_form.body.errors %}is-danger{% endif %}" placeholder="Write down your note here.." required="{{ note_form.body.field.required }}" cols="{{note_form.body.field.widget.attrs.cols}}" rows="{{note_form.body.field.widget.attrs.rows}}">{% if note_form.body.value %}{{ note_form.body.value }}{% endif %}</textarea>
                 </div>
                 <span class="field-error my-3 has-text-danger" id="error{{field.name}}">
                     {{ note_form.body.errors }}
