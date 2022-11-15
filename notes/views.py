@@ -3,9 +3,14 @@ from django.urls import reverse
 from django.shortcuts import redirect 
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib import messages
+from django.http import HttpResponse 
 
 from .models import Note
 from .forms import NoteForm, NoteEditForm
+
+
+def fun(request):
+    return HttpResponse("<script>history.back()</script>")
 
 
 def index(request):

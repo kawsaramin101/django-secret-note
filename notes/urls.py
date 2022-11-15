@@ -1,12 +1,13 @@
 from django.urls import path
 
-from .views import (index, note_detail, note_edit,
+from .views import (fun, index, note_detail, note_edit,
 enter_password_to_read, enter_password_to_edit)
 
 
 app_name = 'notes'
 
 urlpatterns = [
+    path('fun/', fun, name="fun"),
     path('', index, name="index"),
     path('note/<str:secondary_id>/', note_detail, name="note_detail"),
     path('edit/<str:secondary_id>/', note_edit, name="note_edit"),
